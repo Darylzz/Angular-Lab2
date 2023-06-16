@@ -1,0 +1,48 @@
+.addEmployeeFormContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 50%;
+}
+
+.addEmployeeFormInput {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0 0 40px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.addEmployeeFormInput p {
+  font-size: 8px;
+}
+
+.addEmployeeFormInput button {
+  margin: 6px;
+}
+.addFormButton {
+  margin-left: 32%;
+}
+
+@media only screen and (max-width: 768px) {
+  .addEmployeeFormInput {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .addEmployeeFormInput {
+    width: 100%;
+  }
+}
+
+/* @media only screen and (min-width: 1000px) {
+  .addEmployeeFormInput > * {
+    width: 50%;
+    box-sizing: border-box;
+  }
+} */

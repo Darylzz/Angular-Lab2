@@ -1,0 +1,13 @@
+.showByIDContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.showByIDContent {
+  border: 1px solid black;
+  padding: 20px;
+  margin-top: 20px;
+}
+.showByIDContent button {
+  margin-right: 10px;
+}

@@ -1,0 +1,19 @@
+<mat-drawer-container class="homeContainer">
+  <mat-drawer #drawer mode="side" mode="side" class="navbar">
+    <a routerLink="/">Home</a>
+    <br />
+    <a routerLink="/employee">Show all employee</a>
+    <br />
+    <a routerLink="/employee/add">Add employee</a>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button type="button" (click)="drawer.toggle()">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="menu"
+        fontIcon="menu"
+      ></mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

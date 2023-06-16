@@ -1,0 +1,24 @@
+<div class="showByIDContainer">
+  <div class="showByIDContent">
+    <p>FirstNameTH: {{ selectedEmployee.firstNameTH || "-" }}</p>
+    <p>LastNameTH: {{ selectedEmployee.lastNameTH || "-" }}</p>
+    <p>FirstNameEN: {{ selectedEmployee.firstNameEN || "-" }}</p>
+    <p>LastNameEN: {{ selectedEmployee.lastNameEN || "-" }}</p>
+    <p>Nickname: {{ selectedEmployee.nickName || "-" }}</p>
+    <p>EmpID: {{ selectedEmployee.empID || "-" }}</p>
+    <p>Department: {{ selectedEmployee.department?.fullNameEN || "-" }}</p>
+    <p>Position: {{ selectedEmployee.position?.nameEN || "-" }}</p>
+    <p>StartDate: {{ selectedEmployee.startDateDisplay || "-" }}</p>
+    <p>BirthDate: {{ selectedEmployee.birthDateDisplay || "-" }}</p>
+    <p>Email: {{ selectedEmployee.email || "-" }}</p>
+    <p>Telephone: {{ selectedEmployee.telephone || "-" }}</p>
+    <p>Status: {{ selectedEmployee.status?.name || "-" }}</p>
+    <p>ProfilePath: {{ selectedEmployee.profilePath || "-" }}</p>
+    <button mat-raised-button color="accent" routerLink="/employee">
+      Back
+    </button>
+    <button mat-raised-button color="warn" (click)="clickToModify()">
+      Modify
+    </button>
+  </div>
+</div>

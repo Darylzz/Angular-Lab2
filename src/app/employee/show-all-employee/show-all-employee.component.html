@@ -1,0 +1,78 @@
+<div class="showAllEmployeeContainer">
+  <div class="loadingContainer">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </div>
+  <div class="filterSearch">
+    <div>
+      <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Employee"
+          (keyup.enter)="filterEmployee()"
+          [(ngModel)]="searchTerm"
+        />
+      </mat-form-field>
+    </div>
+    <div class="filterButton">
+      <button mat-raised-button color="primary" (click)="filterEmployee()">
+        Search
+      </button>
+      <button mat-raised-button color="warn" (click)="clearSearch()">
+        Clear
+      </button>
+    </div>
+  </div>
+  <div class="employeeInfoContainer">
+    <div
+      class="employeeInfo"
+      *ngFor="let employee of pagedEmployees; let i = index"
+    >
+      <mat-card>
+        <mat-card-content>
+          <div class="flex">
+            <div class="flexText">
+              <h1>FirstName: {{ employee.firstNameEN }}</h1>
+              <h1>LastName: {{ employee.lastNameEN }}</h1>
+              <p>Nickname: {{ employee.nickName }}</p>
+              <p>empId: {{ employee.empID }}</p>
+              <p>Department: {{ employee.department?.fullNameEN }}</p>
+              <p>Position: {{ employee.position?.nameEN }}</p>
+              <p>statusId: {{ employee.statusID }}</p>
+              <p>email: {{ employee.email }}</p>
+            </div>
+            <div class="flexImg">
+              <img
+                src="https://gdb.voanews.com/24A4525A-A09E-42FF-A1CE-B0C291CE5325_cx0_cy11_cw0_w1023_r1_s.jpg"
+                alt="meow"
+              />
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="clickToShowDetail(i)"
+          >
+            Click for detail
+          </button>
+          <button mat-raised-button color="warn" (click)="clickToDelete(i)">
+            Delete
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="paginator">
+    <mat-paginator
+      #paginator
+      class="demo-paginator"
+      [length]="totalEmployees"
+      [pageSize]="pageSize"
+      (page)="handlePageEvent($event)"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</div>

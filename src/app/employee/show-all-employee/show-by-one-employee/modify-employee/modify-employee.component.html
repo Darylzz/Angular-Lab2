@@ -1,0 +1,194 @@
+<h1>Modify Employee Form</h1>
+<div class="modifyEmployeeContainer">
+  <div class="modifyEmployeeInput">
+    <form (ngSubmit)="onModifyEmployee()">
+      <mat-form-field>
+        <mat-label>FirstNameTH</mat-label>
+        <input
+          matInput
+          placeholder="FirstNameTH"
+          type="text"
+          [(ngModel)]="firstNameTH"
+          name="firstNameTH"
+          (change)="onFieldChange()"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>LastNameTH</mat-label>
+        <input
+          matInput
+          placeholder="LastNameTH"
+          type="text"
+          [(ngModel)]="lastNameTH"
+          name="lastNameTH"
+          (change)="onFieldChange()"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>FisrtNameEN</mat-label>
+        <input
+          matInput
+          placeholder="FirstNameEN"
+          type="text"
+          [(ngModel)]="firstNameEN"
+          name="firstNameEN"
+          (change)="onFieldChange()"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>LastNameEN</mat-label>
+        <input
+          matInput
+          placeholder="LastNameEN"
+          type="text"
+          [(ngModel)]="lastNameEN"
+          name="lastNameEN"
+          (change)="onFieldChange()"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>NickName</mat-label>
+        <input
+          matInput
+          placeholder="NickName"
+          type="text"
+          [(ngModel)]="nickName"
+          name="nickName"
+          (change)="onFieldChange()"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Employee ID</mat-label>
+        <input
+          matInput
+          placeholder="Employee ID"
+          type="text"
+          [(ngModel)]="empID"
+          name="empID"
+          (change)="onFieldChange()"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Department</mat-label>
+        <mat-select
+          [(ngModel)]="departmentID"
+          name="departmentID"
+          (change)="onFieldChange()"
+        >
+          <mat-option [value]="1">General Manager</mat-option>
+          <mat-option [value]="2">Humna Resource</mat-option>
+          <mat-option [value]="3">Web developer</mat-option>
+          <mat-option [value]="4">Desktop and Mobile developer</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Position</mat-label>
+        <mat-select
+          [(ngModel)]="positionID"
+          name="positionID"
+          (change)="onFieldChange()"
+        >
+          <mat-option [value]="1">General Manager</mat-option>
+          <mat-option [value]="2">Human Resource Manager</mat-option>
+          <mat-option [value]="3">Human Resources Officer</mat-option>
+          <mat-option [value]="4">Application Section Manager</mat-option>
+          <mat-option [value]="5">System Analyst</mat-option>
+          <mat-option [value]="6">Application Architect</mat-option>
+          <mat-option [value]="7">Programmer Analyst</mat-option>
+          <mat-option [value]="8">Business Analyst</mat-option>
+          <mat-option [value]="9">Web Mapping Manager</mat-option>
+          <mat-option [value]="10">Desktop Mapping Manager</mat-option>
+          <mat-option [value]="11">Programmer</mat-option>
+          <mat-option [value]="12">Tester</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Status ID</mat-label>
+        <mat-select
+          [(ngModel)]="statusID"
+          name="statusID"
+          (change)="onFieldChange()"
+        >
+          <mat-option [value]="1">Enable</mat-option>
+          <mat-option [value]="2">Disable</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input
+          matInput
+          placeholder="E-mail"
+          type="text"
+          [(ngModel)]="email"
+          name="email"
+          (change)="onFieldChange()"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Telephone</mat-label>
+        <input
+          matInput
+          placeholder="Telephone"
+          type="text"
+          [(ngModel)]="telephone"
+          name="telephone"
+          (change)="onFieldChange()"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Profile Path</mat-label>
+        <input
+          matInput
+          placeholder="Profile Path"
+          type="text"
+          [(ngModel)]="profilePath"
+          name="profilePath"
+          (change)="onFieldChange()"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>StartDate</mat-label>
+        <input
+          matInput
+          [matDatepicker]="startDatePicker"
+          placeholder="Start Date"
+          [(ngModel)]="startDate"
+          name="startDate"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="startDatePicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #startDatePicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>BirthDate</mat-label>
+        <input
+          matInput
+          [matDatepicker]="birthDatePicker"
+          placeholder="Birth Date"
+          [(ngModel)]="birthDate"
+          name="birthDate"
+          (change)="onFieldChange()"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="birthDatePicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #birthDatePicker></mat-datepicker>
+      </mat-form-field>
+      <div class="modifyFormButton">
+        <button mat-raised-button color="primary" type="submit">Save</button>
+        <button
+          mat-raised-button
+          color="warn"
+          type="button"
+          (click)="onCancel()"
+          (change)="onFieldChange()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
